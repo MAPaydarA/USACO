@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class gift1 
 {
      public static void main(String[] args) throws FileNotFoundException, IOException
-    {      
+     {      
         BufferedReader f = new BufferedReader(new FileReader("gift1.in"));
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("gift1.out")));
         String memberNum, giftMoney, reciverNum, giver, temp;
@@ -40,35 +40,35 @@ public class gift1
             String reciverList[] = new String [reciverNum1]; 
             int n = 0;
             while (n < reciverNum1 && reciverNum1 != 0)
-			{
-				reciverList[n] = f.readLine(); 
+            {
+		reciverList[n] = f.readLine(); 
                 n++;
             }
-			if(reciverNum1 == 0)
+	    if(reciverNum1 == 0)
                 continue;
-			else
+	    else
             {
                 if(giftMoney1 == 0)
                     continue;
                 else
                 {
                     for (int i = 0; i < memberNum1; i++)
-					{
+		    {
                         if (giver.equals(memberList[i]))
-						{
+			{
                             int rest = giftMoney1 / reciverNum1;
                             memberMoney[i] = memberMoney[i] - (reciverNum1 * rest);
-						}
-					}
+			}
+		    }
                     for (int j = 0; j < reciverNum1; j++)
                     {
-						for (int k = 0; k < memberNum1; k++)
-						{
+			for (int k = 0; k < memberNum1; k++)
+			{
                             if (reciverList[j].equals(memberList[k]))
                             {
-								memberMoney[k] += giftMoney1 / reciverNum1;
+				memberMoney[k] += giftMoney1 / reciverNum1;
                             }
-						}
+			}
                     }
                 }
             }
@@ -85,4 +85,3 @@ public class gift1
         System.exit(0); 
     }
 }
-
